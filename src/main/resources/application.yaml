@@ -1,0 +1,3 @@
+bot:
+  name: ${BOT_NAME:OSurMoviesBot}
+  key: ${BOT_KEY:6217429786:AAGqDmZ2yXMl0vAAZvdSGGjMeTHyTQsLqiw}
