@@ -1,15 +1,19 @@
 package o.sur.app.moviesbot.config
 
 import o.sur.app.moviesbot.service.TelegramBot
+import o.sur.app.moviesbot.utils.error
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.telegram.telegrambots.meta.TelegramBotsApi
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession
 
-
 @Configuration
 class TelegramBotInitializer {
+
+    private val logger: Logger = LoggerFactory.getLogger(this::class.java)
 
     @Bean
     fun telegramBotsApi(myTelegramBot: TelegramBot): TelegramBotsApi {
@@ -18,9 +22,8 @@ class TelegramBotInitializer {
         try {
             telegramBotsApi.registerBot(myTelegramBot)
         } catch (e: TelegramApiException) {
-            e.printStackTrace()
+            logger.error { e.message.toString() }
         }
-
         return telegramBotsApi
     }
 }
