@@ -1,5 +1,7 @@
 package o.sur.app.moviesbot.service
 
+import o.sur.app.moviesbot.domain.Currency
+import o.sur.app.moviesbot.utils.SpringUtils
 import o.sur.app.moviesbot.utils.error
 import o.sur.app.moviesbot.utils.info
 import org.slf4j.Logger
@@ -20,25 +22,24 @@ class TelegramBot(
     private val botName: String,
     @Value("\${bot.key}")
     private val botKey: String,
+    private val apiService: ApiService,
 ) : TelegramLongPollingBot(botKey) {
 
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
 
-    override fun getBotUsername(): String {
-        return this.botName
-    }
+    override fun getBotUsername(): String = this.botName
 
-    override fun getBotToken(): String {
-        return botKey
-    }
+    override fun getBotToken(): String = botKey
 
     init {
-        val listofCommands: MutableList<BotCommand> = ArrayList()
-        listofCommands.add(BotCommand("/start", "get a welcome message"))
-        listofCommands.add(BotCommand("/help", "info how to use this bot"))
-        listofCommands.add(BotCommand("/settings", "set your preferences"))
+        val listCommands = mutableListOf(
+            BotCommand("/start", "get a welcome message"),
+            BotCommand("/get_exchange_rate", "get exchange rate"),
+            BotCommand("/help", "info how to use this bot"),
+            BotCommand("/settings", "set your preferences"),
+        )
         try {
-            this.execute(SetMyCommands(listofCommands, BotCommandScopeDefault(), null))
+            this.execute(SetMyCommands(listCommands, BotCommandScopeDefault(), null))
         } catch (e: TelegramApiException) {
             logger.error("Error setting bot's command list: " + e.message)
         }
@@ -54,11 +55,17 @@ class TelegramBot(
             val userName = update.message.chat.firstName
             when (messageText) {
                 "/start" -> startCommandReceived(chatId, userName)
+                "/get_exchange_rate" -> getCurrentRate(chatId)
                 else -> { // Note the block
                     sendMessage(chatId, "sorry command was not recognized")
                 }
             }
         }
+    }
+
+    private fun getCurrentRate(chatId: Long?) {
+        val currencyRates: List<Currency>? = apiService.fetchCurrencyRates()
+        sendMessage(chatId!!, SpringUtils.performCurrencyRatesMassage(currencyRates))
     }
 
     fun startCommandReceived(chatId: Long, userName: String) {

@@ -16,16 +16,40 @@ repositories {
 }
 
 dependencies {
+    // Telegram Bots API for creating bots in Telegram
     implementation("org.telegram:telegrambots:6.7.0")
-    implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
+
+    // Essential Spring Boot Starters for Building Spring Applications Quickly
     implementation("org.springframework.boot:spring-boot-starter")
+
+    // Spring Boot JDBC starter for accessing relational databases
+    implementation("org.springframework.boot:spring-boot-starter-jdbc:3.1.1")
+
+    // Spring Data JPA starter to work with relational data with JPA
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.1.1")
+
+    // Kotlin Reflection Library, used to work with Kotlin metadata at runtime
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 
-    implementation("org.springframework.boot:spring-boot-starter-jdbc:3.1.1")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.1.1")
+    // Jackson Module for Kotlin to serialize and deserialize Kotlin objects to JSON and vice versa
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+    // kotlin-logging library for logging in Kotlin
+    implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
+
+    // OkHttp - HTTP client for sending HTTP requests and receiving responses
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+
+    // Emoji-java to work with emoji in Java
+    implementation("com.vdurmont:emoji-java:5.1.1")
+
+    // PostgreSQL driver for connecting to a PostgreSQL database
     implementation("org.postgresql:postgresql:42.6.0")
+
+    // Liquibase for database schema versioning and migrations
     implementation("org.liquibase:liquibase-core:4.22.0")
 
+    // Dependencies for Testing Spring Boot Applications
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
