@@ -1,4 +1,4 @@
-<img src="logo.png" alt="Description of image" width="100" style="float: left; margin: 10px;">
+<img src="logo.png" alt="Description of image" width="100" style="float: left; margin: 10px; background: none">
 
 ### The project is based on a series of video tutorials
 
