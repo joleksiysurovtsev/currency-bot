@@ -1,1 +1,1 @@
-rootProject.name = "currensy-bot"
+rootProject.name = "currensybot"

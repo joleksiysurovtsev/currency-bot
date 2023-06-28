@@ -70,7 +70,7 @@ jib {
     }
     container {
         jvmFlags = listOf("-Xms512m", "-Xmx512m")
-        mainClass = "o.sur.app.moviesbot.MoviesBotApplication"
+        mainClass = "o.sur.app.currencybot.MoviesBotApplication"
         ports = listOf("8080")
     }
 }

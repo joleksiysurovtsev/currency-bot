@@ -1,4 +1,4 @@
-package o.sur.app.moviesbot.domain
+package o.sur.app.currencybot.domain
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import java.math.BigDecimal

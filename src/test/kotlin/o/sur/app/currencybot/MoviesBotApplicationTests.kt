@@ -1,4 +1,4 @@
-package o.sur.app.moviesbot
+package o.sur.app.currencybot
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

@@ -1,7 +1,7 @@
-package o.sur.app.moviesbot.utils
+package o.sur.app.currencybot.utils
 
 import com.vdurmont.emoji.EmojiParser
-import o.sur.app.moviesbot.domain.Currency
+import o.sur.app.currencybot.domain.Currency
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 

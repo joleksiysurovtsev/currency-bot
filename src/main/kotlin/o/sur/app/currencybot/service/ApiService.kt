@@ -1,8 +1,8 @@
-package o.sur.app.moviesbot.service
+package o.sur.app.currencybot.service
 
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.ObjectMapper
-import o.sur.app.moviesbot.domain.Currency
+import o.sur.app.currencybot.domain.Currency
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.springframework.beans.factory.annotation.Value

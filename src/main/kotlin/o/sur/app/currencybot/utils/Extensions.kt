@@ -1,4 +1,4 @@
-package o.sur.app.moviesbot.utils
+package o.sur.app.currencybot.utils
 
 import org.slf4j.Logger
 fun Logger.error(function: () -> String) {

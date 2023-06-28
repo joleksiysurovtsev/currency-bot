@@ -1,7 +1,7 @@
-package o.sur.app.moviesbot.config
+package o.sur.app.currencybot.config
 
-import o.sur.app.moviesbot.service.TelegramBot
-import o.sur.app.moviesbot.utils.error
+import o.sur.app.currencybot.service.TelegramBot
+import o.sur.app.currencybot.utils.error
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.context.annotation.Bean

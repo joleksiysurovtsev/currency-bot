@@ -1,4 +1,4 @@
-package o.sur.app.moviesbot.domain
+package o.sur.app.currencybot.domain
 
 import jakarta.persistence.Entity
 import jakarta.persistence.Id

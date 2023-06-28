@@ -1,9 +1,9 @@
-package o.sur.app.moviesbot.service
+package o.sur.app.currencybot.service
 
-import o.sur.app.moviesbot.domain.Currency
-import o.sur.app.moviesbot.utils.SpringUtils
-import o.sur.app.moviesbot.utils.error
-import o.sur.app.moviesbot.utils.info
+import o.sur.app.currencybot.domain.Currency
+import o.sur.app.currencybot.utils.SpringUtils
+import o.sur.app.currencybot.utils.error
+import o.sur.app.currencybot.utils.info
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value
