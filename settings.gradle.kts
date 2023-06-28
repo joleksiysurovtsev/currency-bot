@@ -1,1 +1,1 @@
-rootProject.name = "moviesbot"
+rootProject.name = "currensy-bot"
